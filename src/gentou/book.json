@@ -1,0 +1,11 @@
+{
+    "title": "GitBook 使用教程",
+    "description": "记录 GitBook 的配置和一些插件的使用",
+    "author": "蔡刚坤",
+    "language": "zh-hans",
+    "links": {
+        "sidebar": {
+            "首页": "http://docs.caigk.com"
+        }
+    }
+}
