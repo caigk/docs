@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {    
     "start": "gitbook serve src/gentou gentou",
-    "build": "gitbook build",
+    "build": "gitbook build src/gentou gentou",
     "commit": "git add . --all && git commit -m update && git push origin master",
     "save": "npm run build && npm run commit"
   },
