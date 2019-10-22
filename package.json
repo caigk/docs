@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {    
-    "start": "gitbook serve",
+    "start": "gitbook serve src/gentou gentou",
     "build": "gitbook build",
     "commit": "git add . --all && git commit -m update && git push origin master",
     "save": "npm run build && npm run commit"
