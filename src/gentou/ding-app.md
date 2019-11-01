@@ -1,6 +1,7 @@
 # 钉钉应用接口配置
 
 [钉钉开放平台管理后台](https://open-dev.dingtalk.com/)
+
 钉钉文档:[获取appKey和appSecret](https://ding-doc.dingtalk.com/doc#/serverapi2/eev437)
 
 ## 打开钉钉开放平台
