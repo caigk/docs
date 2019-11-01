@@ -10,7 +10,7 @@
 
 ![新建微应用](/images/ding-app-2@2x.png)
 
-[下载ICON](/images/gentouicon.png)
+![下载ICON](/images/gentouicon.png)
 
 ## 填写基本信息
 
