@@ -4,8 +4,6 @@
     "author": "蔡刚坤",
     "language": "zh-hans",
     "links": {
-        "sidebar": {
-            "首页": "http://docs.caigk.com"
-        }
+        "sidebar": {}
     }
 }
