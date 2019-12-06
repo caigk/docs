@@ -31,6 +31,18 @@
 
 ## 获取开发key
 
+![获取企业ID](/images/ding-app-9@2x.png)
+
 ![获取开发key1](/images/ding-app-7@2x.png)
 
 ![获取开发key2](/images/ding-app-8@2x.png)
+
+## 最终提供
+
+```conf
+CorpId:
+AppKey:
+AppSecret:
+AgentId:
+
+```
