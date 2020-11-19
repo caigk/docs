@@ -2,11 +2,13 @@
   "name": "caigk-docs",
   "version": "1.0.0",
   "description": "",
-  "scripts": {    
-    "start": "gitbook serve src/gentou gentou",
-    "build": "gitbook build src/gentou gentou",
+  "scripts": {
+    "startGentou": "gitbook serve src/gentou gentou",
+    "buildGentou": "gitbook build src/gentou gentou",
+    "startKchis": "gitbook serve src/kchis kchis",
+    "buildKchis": "gitbook build src/kchis kchis",
     "commit": "git add . --all && git commit -m update && git push origin master",
-    "save": "npm run build && npm run commit"
+    "save": "npm run buildGentou && npm run buildKchis && npm run commit"
   },
   "repository": {
     "type": "git",

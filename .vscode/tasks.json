@@ -9,6 +9,25 @@
             "problemMatcher": [
                 "$eslint-compact"
             ]
+        },
+        {
+            "type": "npm",
+            "script": "startKchis",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "label": "npm: startKchis",
+            "detail": "gitbook serve src/kchis kchis"
+        },
+        {
+            "type": "npm",
+            "script": "buildKchis",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "group": "build",
+            "label": "npm: buildKchis",
+            "detail": "gitbook build src/kchis kchis"
         }
     ]
 }
