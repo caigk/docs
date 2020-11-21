@@ -14,7 +14,8 @@
         "favicon",
         "search",
         "-fontsettings",
-        "-sharing"
+        "-sharing",
+        "otherlink"
     ],
     "pluginsConfig": {
         "favicon": {
