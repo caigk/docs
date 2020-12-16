@@ -11,3 +11,7 @@
 * 常用插件
   * [我的练习1](ding-app.md)
   * [我的练习2](ding-msg-bot.md)
+
+## 其它
+
+* [下载pdf](ref://../pdf/laboratory.pdf)

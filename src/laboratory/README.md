@@ -24,4 +24,3 @@ git clone git@github.com:GitbookIO/gitbook.git
 
 [插件:other link](https://github.com/MichaelHu/gitbook-plugin-otherlink)
 
-[下载](ref://../pdf/laboratory.pdf)
