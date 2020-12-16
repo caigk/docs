@@ -15,3 +15,4 @@
 ## 其它
 
 * [下载pdf](ref://../pdf/laboratory.pdf)
+* [修订记录](CHANGES.md)
