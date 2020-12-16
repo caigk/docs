@@ -1,0 +1,9 @@
+
+/* 禁止显示 gitbook图标 */
+.gitbook-link {
+	display: none !important;
+}
+
+.summary>li.divider:nth-last-child(2){
+	display: none !important;
+}

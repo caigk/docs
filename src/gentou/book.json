@@ -1,8 +1,25 @@
 {
-    "title": "GitBook 使用教程",
+    "title": "跟投系统常见总题解答",
     "description": "记录 GitBook 的配置和一些插件的使用",
     "author": "蔡刚坤",
     "language": "zh-hans",
+    "variables": {
+        "title": "跟投系统常见总题解答"
+    },
+    "styles":{
+        "website":"styles/website.css",
+        "ebook":"styles/ebook.css",
+        "pdf":"styles/pdf.css"
+    },
+    "pdf": {
+        "paperSize": "a4",
+        "margin": {
+            "right": 0,
+            "left": 0,
+            "top": 0,
+            "bottom": 0
+        }
+    },
     "plugins" : [ 
         "page-toc-button",
         "insert-logo"

@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "startLaboratory": "gitbook serve src/laboratory laboratory",
+    "buildLaboratory": "gitbook build src/laboratory laboratory & gitbook pdf src/laboratory pdf/laboratory.pdf",
     "startGentou": "gitbook serve src/gentou gentou",
-    "buildGentou": "gitbook build src/gentou gentou",
+    "buildGentou": "gitbook build src/gentou gentou & gitbook pdf src/gentou pdf/gentou.pdf",
     "startKchis": "gitbook serve src/kchis kchis",
-    "buildKchis": "gitbook build src/kchis kchis",
+    "buildKchis": "gitbook build src/kchis kchis & gitbook pdf src/kchis pdf/kchis.pdf",
     "commit": "git add . --all && git commit -m update && git push origin master",
-    "save": "npm run buildGentou && npm run buildKchis && npm run commit"
+    "save": "npm run buildGentou && npm run buildKchis && npm run buildLaboratory &&  npm run commit"
   },
   "repository": {
     "type": "git",

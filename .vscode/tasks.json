@@ -8,7 +8,8 @@
             "script": "save",
             "problemMatcher": [
                 "$eslint-compact"
-            ]
+            ],
+            "label": "save",
         },
         {
             "type": "npm",
@@ -16,8 +17,7 @@
             "problemMatcher": [
                 "$eslint-compact"
             ],
-            "label": "npm: startKchis",
-            "detail": "gitbook serve src/kchis kchis"
+            "label": "31: start kchis"
         },
         {
             "type": "npm",
@@ -26,8 +26,41 @@
                 "$eslint-compact"
             ],
             "group": "build",
-            "label": "npm: buildKchis",
-            "detail": "gitbook build src/kchis kchis"
+            "label": "32: build kchis",
+        },
+        {
+            "type": "npm",
+            "script": "startGentou",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "label": "21: start gentou",
+        },
+        {
+            "type": "npm",
+            "script": "buildGentou",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "group": "build",
+            "label": "22: build gentou"
+        },
+        {
+            "type": "npm",
+            "script": "startLaboratory",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "label": "11: start laboratory",
+        },
+        {
+            "type": "npm",
+            "script": "buildLaboratory",
+            "problemMatcher": [
+                "$eslint-compact"
+            ],
+            "group": "build",
+            "label": "12: build laboratory"
         }
     ]
 }
