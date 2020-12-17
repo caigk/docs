@@ -2,8 +2,8 @@
 
 ## 日期格式化
 
-参见: https://github.com/GitbookIO/gitbook/blob/master/lib/constants/defaultFilters.js
+参见:https://github.com/GitbookIO/gitbook/blob/master/lib/constants/defaultFilters.js
 
 ```js
-{{ gitbook.time }}
+{{ gitbook.time  }}
 ```
