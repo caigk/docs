@@ -8,6 +8,8 @@
 * 缺省模板：[https://github.com/GitbookIO/theme-default](https://github.com/GitbookIO/theme-default)
 * 模板变量：[https://github.com/GitbookIO/gitbook/blob/master/docs/templating/variables.md](https://github.com/GitbookIO/gitbook/blob/master/docs/templating/variables.md)
 
+* 别人整理的[gitbook help](https://www.mapull.com/gitbook/default/)
+
 ## 重要文件位置
 
 * 缺省模板本地：/System/Volumes/Data/Users/caigangkun/.gitbook/versions/3.2.3/node_modules/gitbook-plugin-theme-default/
@@ -24,3 +26,6 @@ git clone git@github.com:GitbookIO/gitbook.git
 
 [插件:other link](https://github.com/MichaelHu/gitbook-plugin-otherlink)
 
+### 相关
+
+ [gitbook style react](http://styleguide.gitbook.com/)
