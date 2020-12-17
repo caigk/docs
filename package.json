@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "startLaboratory": "gitbook serve src/laboratory laboratory",
-    "buildLaboratory": "gitbook build src/laboratory laboratory & gitbook pdf src/laboratory pdf/laboratory.pdf",
+    "buildLaboratory": "gitbook build --no-live src/laboratory laboratory & gitbook pdf src/laboratory pdf/laboratory.pdf",
     "startGentou": "gitbook serve src/gentou gentou",
     "buildGentou": "gitbook build src/gentou gentou & gitbook pdf src/gentou pdf/gentou.pdf",
     "startKchis": "gitbook serve src/kchis kchis",
