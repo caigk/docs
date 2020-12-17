@@ -8,6 +8,9 @@
 * 缺省模板：[https://github.com/GitbookIO/theme-default](https://github.com/GitbookIO/theme-default)
 * 模板变量：[https://github.com/GitbookIO/gitbook/blob/master/docs/templating/variables.md](https://github.com/GitbookIO/gitbook/blob/master/docs/templating/variables.md)
 
+* 模板引擎filter [https://mozilla.github.io/nunjucks/templating.html#builtin-filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters)
+* gitbook模板引擎filter [https://github.com/GitbookIO/gitbook/blob/master/lib/output/website/createTemplateEngine.js](https://github.com/GitbookIO/gitbook/blob/master/lib/output/website/createTemplateEngine.js)
+
 * 别人整理的[gitbook help](https://www.mapull.com/gitbook/default/)
 
 ## 重要文件位置
