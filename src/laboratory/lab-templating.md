@@ -11,7 +11,7 @@
 {% raw %}
 
 ```js
-{{ gitbook.time | date('YYYY-M-D')  }}
+{{ gitbook.time | date('YYYY-M-D') }}
 ```
 
 {% endraw %}
