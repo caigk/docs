@@ -3,6 +3,7 @@
 ## gitbook 技术
 
 * [前言](README.md)
+* [修订记录](CHANGES.md)
 * [环境与安装](install.md)
 * [插件](plugin.md)
 
@@ -18,4 +19,3 @@
 ## 其它
 
 * [下载pdf](ref://../pdf/laboratory.pdf)
-* [修订记录](CHANGES.md)
