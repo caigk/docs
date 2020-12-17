@@ -11,6 +11,7 @@
 {% raw %}
 
 ```js
+//date('YYYY-M-D')在md文件中，github page build 时会出错
 {{ gitbook.time | date('YYYY-M-D') }}
 ```
 
