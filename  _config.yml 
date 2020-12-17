@@ -5,6 +5,5 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
-# Reading Files
-exclude:
-  - src/
+# https://jekyllrb.com/docs/configuration/options/
+

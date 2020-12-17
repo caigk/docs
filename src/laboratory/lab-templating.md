@@ -7,3 +7,11 @@
 ```js
  gitbook.time | date('YYYY-M-D') 
 ```
+
+{% raw %}
+
+```js
+{{ gitbook.time | date('YYYY-M-D')  }}
+```
+
+{% endraw %}
