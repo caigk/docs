@@ -13,6 +13,7 @@
   * [词汇表](lab-glossary.md)
   * [变量表](lab-variables.md)
   * [模板技术](lab-templating.md)
+  * [cover](lab-cover.md)
   * [我的练习1](ding-app.md)
   * [我的练习2](ding-msg-bot.md)
 

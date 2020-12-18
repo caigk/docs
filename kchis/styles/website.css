@@ -1,9 +1,0 @@
-
-/* 禁止显示 gitbook图标 */
-.gitbook-link {
-	display: none !important;
-}
-
-.summary .divider {
-	display: none !important;
-}

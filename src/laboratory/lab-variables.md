@@ -91,3 +91,7 @@ Languages are defined by `{ id: 'en', title: 'English' }`.
 | -------- | ----- | ------ |
 | `config.title` | {{ config.title }} | book.json |
 | `config.author` | {{ config.author }} | book.json |
+
+### summary.parts
+
+{{ summary.parts | dump }}
