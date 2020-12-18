@@ -21,6 +21,11 @@
   "bugs": {
     "url": "https://github.com/caigk/docs/issues"
   },
-  "homepage": "https://github.com/caigk/docs#readme"
+  "homepage": "https://github.com/caigk/docs#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "gulp": "^4.0.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify": "^3.0.2"
+  }
 }
-
