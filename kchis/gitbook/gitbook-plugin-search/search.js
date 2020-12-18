@@ -1,1 +1,213 @@
-require(["gitbook","jquery"],function(a,o){var r,i,s,e,l,u,n=15,c=500,h=void 0!==history.pushState,t=o("body");function p(e){t.addClass("with-search"),t.addClass("search-loading"),a.search.query(e,0,n).then(function(e){!function(e){r.addClass("open");var n=0==e.count;r.toggleClass("no-results",n),s.empty(),l.text(e.count),u.text(e.query),e.results.forEach(function(e){var n=o("<li>",{class:"search-results-item"}),t=o("<h3>"),r=o("<a>",{href:a.state.basePath+"/"+e.url,text:e.title}),e=e.body.trim();e.length>c&&(e=e.slice(0,c).trim()+"...");e=o("<p>").html(e);r.appendTo(t),t.appendTo(n),e.appendTo(n),n.appendTo(s)})}(e)}).always(function(){t.removeClass("search-loading")})}function d(){t.removeClass("with-search"),r.removeClass("open")}function f(){var e=function(e){var n=window.location.href;e=e.replace(/[\[\]]/g,"\\$&");n=new RegExp("[?&]"+e+"(=([^&#]*)|&|#|$)","i").exec(n);return n?n[2]?decodeURIComponent(n[2].replace(/\+/g," ")):"":null}("q");e&&0<e.length&&(i.val(e),p(e))}function v(){function n(){var e=i.val();0==e.length?d():p(e)}i=o("#book-search-input input"),r=o("#book-search-results"),s=r.find(".search-results-list"),e=r.find(".search-results-title"),l=e.find(".search-results-count"),u=e.find(".search-query");var t=!1;i.on("propertychange",function(e){"value"==e.originalEvent.propertyName&&n()}),i.on("input",function(e){t||(o(this).unbind("propertychange"),t=!0),n()}),i.on("blur",function(e){var n;h&&(n=function(e,n){n=encodeURIComponent(n);var t,r=window.location.href,a=new RegExp("([?&])"+e+"=.*?(&|#|$)(.*)","gi");{if(a.test(r))return null!=n?r.replace(a,"$1"+e+"="+n+"$2$3"):(r=(t=r.split("#"))[0].replace(a,"$1$3").replace(/(&|\?)$/,""),void 0!==t[1]&&null!==t[1]&&(r+="#"+t[1]),r);if(null==n)return r;a=-1!==r.indexOf("?")?"&":"?";return r=(t=r.split("#"))[0]+a+e+"="+n,void 0!==t[1]&&null!==t[1]&&(r+="#"+t[1]),r}}("q",o(this).val()),history.pushState({path:n},null,n))})}a.events.on("page.change",function(){v(),d(),a.search.isInitialized()&&f()}),a.events.on("search.ready",function(){v(),f()})});
+require([
+    'gitbook',
+    'jquery'
+], function(gitbook, $) {
+    var MAX_RESULTS = 15;
+    var MAX_DESCRIPTION_SIZE = 500;
+
+    var usePushState = (typeof history.pushState !== 'undefined');
+
+    // DOM Elements
+    var $body = $('body');
+    var $bookSearchResults;
+    var $searchInput;
+    var $searchList;
+    var $searchTitle;
+    var $searchResultsCount;
+    var $searchQuery;
+
+    // Throttle search
+    function throttle(fn, wait) {
+        var timeout;
+
+        return function() {
+            var ctx = this, args = arguments;
+            if (!timeout) {
+                timeout = setTimeout(function() {
+                    timeout = null;
+                    fn.apply(ctx, args);
+                }, wait);
+            }
+        };
+    }
+
+    function displayResults(res) {
+        $bookSearchResults.addClass('open');
+
+        var noResults = res.count == 0;
+        $bookSearchResults.toggleClass('no-results', noResults);
+
+        // Clear old results
+        $searchList.empty();
+
+        // Display title for research
+        $searchResultsCount.text(res.count);
+        $searchQuery.text(res.query);
+
+        // Create an <li> element for each result
+        res.results.forEach(function(res) {
+            var $li = $('<li>', {
+                'class': 'search-results-item'
+            });
+
+            var $title = $('<h3>');
+
+            var $link = $('<a>', {
+                'href': gitbook.state.basePath + '/' + res.url,
+                'text': res.title
+            });
+
+            var content = res.body.trim();
+            if (content.length > MAX_DESCRIPTION_SIZE) {
+                content = content.slice(0, MAX_DESCRIPTION_SIZE).trim()+'...';
+            }
+            var $content = $('<p>').html(content);
+
+            $link.appendTo($title);
+            $title.appendTo($li);
+            $content.appendTo($li);
+            $li.appendTo($searchList);
+        });
+    }
+
+    function launchSearch(q) {
+        // Add class for loading
+        $body.addClass('with-search');
+        $body.addClass('search-loading');
+
+        // Launch search query
+        throttle(gitbook.search.query(q, 0, MAX_RESULTS)
+        .then(function(results) {
+            displayResults(results);
+        })
+        .always(function() {
+            $body.removeClass('search-loading');
+        }), 1000);
+    }
+
+    function closeSearch() {
+        $body.removeClass('with-search');
+        $bookSearchResults.removeClass('open');
+    }
+
+    function launchSearchFromQueryString() {
+        var q = getParameterByName('q');
+        if (q && q.length > 0) {
+            // Update search input
+            $searchInput.val(q);
+
+            // Launch search
+            launchSearch(q);
+        }
+    }
+
+    function bindSearch() {
+        // Bind DOM
+        $searchInput        = $('#book-search-input input');
+        $bookSearchResults  = $('#book-search-results');
+        $searchList         = $bookSearchResults.find('.search-results-list');
+        $searchTitle        = $bookSearchResults.find('.search-results-title');
+        $searchResultsCount = $searchTitle.find('.search-results-count');
+        $searchQuery        = $searchTitle.find('.search-query');
+
+        // Launch query based on input content
+        function handleUpdate() {
+            var q = $searchInput.val();
+
+            if (q.length == 0) {
+                closeSearch();
+            }
+            else {
+                launchSearch(q);
+            }
+        }
+
+        // Detect true content change in search input
+        // Workaround for IE < 9
+        var propertyChangeUnbound = false;
+        $searchInput.on('propertychange', function(e) {
+            if (e.originalEvent.propertyName == 'value') {
+                handleUpdate();
+            }
+        });
+
+        // HTML5 (IE9 & others)
+        $searchInput.on('input', function(e) {
+            // Unbind propertychange event for IE9+
+            if (!propertyChangeUnbound) {
+                $(this).unbind('propertychange');
+                propertyChangeUnbound = true;
+            }
+
+            handleUpdate();
+        });
+
+        // Push to history on blur
+        $searchInput.on('blur', function(e) {
+            // Update history state
+            if (usePushState) {
+                var uri = updateQueryString('q', $(this).val());
+                history.pushState({ path: uri }, null, uri);
+            }
+        });
+    }
+
+    gitbook.events.on('page.change', function() {
+        bindSearch();
+        closeSearch();
+
+        // Launch search based on query parameter
+        if (gitbook.search.isInitialized()) {
+            launchSearchFromQueryString();
+        }
+    });
+
+    gitbook.events.on('search.ready', function() {
+        bindSearch();
+
+        // Launch search from query param at start
+        launchSearchFromQueryString();
+    });
+
+    function getParameterByName(name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)', 'i'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+
+    function updateQueryString(key, value) {
+        value = encodeURIComponent(value);
+
+        var url = window.location.href;
+        var re = new RegExp('([?&])' + key + '=.*?(&|#|$)(.*)', 'gi'),
+            hash;
+
+        if (re.test(url)) {
+            if (typeof value !== 'undefined' && value !== null)
+                return url.replace(re, '$1' + key + '=' + value + '$2$3');
+            else {
+                hash = url.split('#');
+                url = hash[0].replace(re, '$1$3').replace(/(&|\?)$/, '');
+                if (typeof hash[1] !== 'undefined' && hash[1] !== null)
+                    url += '#' + hash[1];
+                return url;
+            }
+        }
+        else {
+            if (typeof value !== 'undefined' && value !== null) {
+                var separator = url.indexOf('?') !== -1 ? '&' : '?';
+                hash = url.split('#');
+                url = hash[0] + separator + key + '=' + value;
+                if (typeof hash[1] !== 'undefined' && hash[1] !== null)
+                    url += '#' + hash[1];
+                return url;
+            }
+            else
+                return url;
+        }
+    }
+});
