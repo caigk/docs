@@ -22,9 +22,14 @@
     },
     "plugins" : [ 
         "page-toc-button",
+        "favicon",
         "insert-logo"
     ],
     "pluginsConfig": {
+        "favicon": {
+            "shortcut": "heIcon.ico",
+            "bookmark": "heIcon.ico"
+        },
         "page-toc-button": {
             "maxTocDepth": 2,
             "minTocSize": 2
