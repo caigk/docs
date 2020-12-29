@@ -32,3 +32,7 @@ git clone git@github.com:GitbookIO/gitbook.git
 ### 相关
 
  [gitbook style react](http://styleguide.gitbook.com/)
+
+### sidebar待风格与操作在 theme 中定义
+
+[theme-default](https://github.com/GitbookIO/theme-default)
