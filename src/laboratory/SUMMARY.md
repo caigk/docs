@@ -18,9 +18,6 @@
   * [我的练习2](ding-msg-bot.md)
 
 * 相关技术
-  * [pandoc](pandoc.md)
-  * [latex](latex.md)
-  * [termux](termux.md)
 
 ## 其它
 
