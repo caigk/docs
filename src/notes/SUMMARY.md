@@ -9,6 +9,7 @@
 * [electron](electron.md)
 * [vscode](vscode.md)
 * [webpack](webpack.md)
+* [test](js-test.md)
 
 ## PHP
 
