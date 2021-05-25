@@ -9,7 +9,7 @@ function optize(cb) {
   //压缩js
   src('docs/kchis/**/*.js')
     .pipe(uglify())
-    .pipe(dest('kchis/'));
+    .pipe(dest('docs/kchis/'));
 
 
   //压缩html

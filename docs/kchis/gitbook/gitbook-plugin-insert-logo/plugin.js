@@ -1,15 +1,1 @@
-require(['gitbook', 'jQuery'], function (gitbook, $) {
-  var url = ''
-  var style = ''
-  var insertLogo = function (url, style) {
-    $('.book-summary').children().eq(0).before('<div class="book-logo"><img src="' + url + '" style="' + style + '"></div>')
-  }
-  gitbook.events.bind('start', function (e, config) {
-    url = config['insert-logo']['url']
-    style = config['insert-logo']['style']
-  })
-
-  gitbook.events.bind("page.change", function() {
-    insertLogo(url, style)
-  })
-})
+require(["gitbook","jQuery"],function(e,n){var i="",r="";e.events.bind("start",function(e,o){i=o["insert-logo"].url,r=o["insert-logo"].style}),e.events.bind("page.change",function(){var e,o;e=i,o=r,n(".book-summary").children().eq(0).before('<div class="book-logo"><img src="'+e+'" style="'+o+'"></div>')})});
