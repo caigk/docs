@@ -13,7 +13,7 @@
         },
         {
             "type": "npm",
-            "script": "startKchis",
+            "script": "start:kchis",
             "problemMatcher": [
                 "$eslint-compact"
             ],
@@ -21,7 +21,7 @@
         },
         {
             "type": "npm",
-            "script": "buildKchis",
+            "script": "build:kchis",
             "problemMatcher": [
                 "$eslint-compact"
             ],
@@ -30,7 +30,7 @@
         },
         {
             "type": "npm",
-            "script": "startGentou",
+            "script": "start:gentou",
             "problemMatcher": [
                 "$eslint-compact"
             ],
@@ -38,7 +38,7 @@
         },
         {
             "type": "npm",
-            "script": "buildGentou",
+            "script": "build:gentou",
             "problemMatcher": [
                 "$eslint-compact"
             ],
@@ -47,7 +47,7 @@
         },
         {
             "type": "npm",
-            "script": "startLaboratory",
+            "script": "start:laboratory",
             "problemMatcher": [
                 "$eslint-compact"
             ],
@@ -55,7 +55,7 @@
         },
         {
             "type": "npm",
-            "script": "buildLaboratory",
+            "script": "build:laboratory",
             "problemMatcher": [
                 "$eslint-compact"
             ],

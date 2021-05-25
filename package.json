@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "startLaboratory": "gitbook serve src/laboratory",
-    "buildLaboratory": "gitbook build src/laboratory laboratory && gitbook pdf src/laboratory pdf/laboratory.pdf",
-    "startGentou": "gitbook serve src/gentou",
-    "buildGentou": "gitbook build src/gentou gentou && gitbook pdf src/gentou pdf/gentou.pdf",
-    "startKchis": "gitbook serve src/kchis",
-    "buildKchis": "gitbook build src/kchis kchis && gitbook pdf src/kchis pdf/kchis.pdf",
+    "start:laboratory": "gitbook serve src/laboratory",
+    "build:laboratory": "gitbook build src/laboratory docs/laboratory && gitbook pdf src/laboratory docs/pdf/laboratory.pdf",
+    "start:gentou": "gitbook serve src/gentou",
+    "build:gentou": "gitbook build src/gentou docs/gentou && gitbook pdf src/gentou docs/pdf/gentou.pdf",
+    "start:kchis": "gitbook serve src/kchis",
+    "build:kchis": "gitbook build src/kchis docs/kchis && gitbook pdf src/kchis docs/pdf/kchis.pdf",
     "commit": "git add . --all && git commit -m update && git push origin master",
-    "startNotes": "gitbook serve src/notes",
-    "save": "npm run buildGentou && npm run buildKchis && npm run buildLaboratory &&  npm run commit"
+    "start:notes": "gitbook serve src/notes",
+    "save": "npm run build:gentou && npm run build:kchis && npm run build:laboratory &&  npm run commit"
   },
   "repository": {
     "type": "git",

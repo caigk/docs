@@ -27,6 +27,7 @@
 * [pandoc](pandoc.md)
 * [latex](latex.md)
 * [termux](termux.md)
+* [jekyll](jekyll.md)
 
 ## Mac
 

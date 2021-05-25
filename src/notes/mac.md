@@ -145,3 +145,12 @@ Then push:
 ```sh
 git push 
 ```
+
+## 分区exFAT 指定unit size
+
+* [Default cluster size for NTFS, FAT, and exFAT](https://support.microsoft.com/en-us/topic/default-cluster-size-for-ntfs-fat-and-exfat-9772e6f1-e31a-00d7-e18f-73169155af95)
+
+```sh
+df
+sudo newfs_exfat -b 1024 -v exFAT /dev/disk2s5
+```

@@ -7,15 +7,15 @@ var rename = require("gulp-rename");
 
 function optize(cb) {
   //压缩js
-  src('kchis/**/*.js')
+  src('docs/kchis/**/*.js')
     .pipe(uglify())
     .pipe(dest('kchis/'));
 
 
   //压缩html
-  src('kchis/**/*.html')
+  src('docs/kchis/**/*.html')
     .pipe(htmlmin({ "removeComments": true, "collapseWhitespace": true }))
-    .pipe(dest('kchis/'));
+    .pipe(dest('docs/kchis/'));
 
   //压缩png,作用不大
   // src('kchis/**/*.png')
