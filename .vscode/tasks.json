@@ -61,6 +61,12 @@
             ],
             "group": "build",
             "label": "12: build laboratory"
+        },
+        {
+            "type": "shell",
+            "command": "rsync -arvuz  --delete  docs/ root@t.hotelsaas.com:/var/www/docs/",
+            "problemMatcher": [],
+            "label": "9: 发布到docs.jinguisoft.com"
         }
     ]
 }
