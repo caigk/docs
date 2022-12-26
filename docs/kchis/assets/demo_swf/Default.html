@@ -1,4 +1,45 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head runat="server"><title>无标题页</title></head><body style="margin: 0px auto; padding: 0; width:1000px; background-image:url('../../Images/products/bj_wh_kingconter.jpg')"><form id=" form1" runat="server"><div style="margin: 0 auto; padding: 0; width:1000px"><object id="Rene" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" height="768" width="1000"><param name="movie" value="{{file}}"><param name="quality" value="high"><param name="bgcolor" value="#FFFFFF"><embed src="{{file}}" allowscriptaccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" height="768" width="1000"></object></div><script type="text/javascript">var totalFrames;
+﻿<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title>无标题页</title>
+</head>
+
+<body
+    style="margin: 0px auto; padding: 0; width:1000px; background-image:url('../../Images/products/bj_wh_kingconter.jpg')">
+    <form id=" form1" runat="server">
+        <div style="margin: 0 auto; padding: 0; width:1000px">
+            <!-- <div style="margin:5px">
+                <img src="../../Images/products/play.png" id="btnPlay" title="播放" alt="播放" onclick="Pause()"
+                    style="cursor:pointer" />
+                <img src="../../Images/products/stopPlay.png" id="btnStop" title="停止" alt="停止" onclick="reStart()"
+                    style="cursor:pointer" />
+                <a href="../demoOnline.aspx"><img style="border:white" src="../../Images/products/backOff.png"
+                        title="返回在线演示" alt="返回在线演示" /></a>
+            </div> -->
+            <!-- <OBJECT id="curFlash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0"
+                WIDTH=1000 HEIGHT=768 style="z-index:-10">
+                <PARAM NAME=movie VALUE="<%= Request.QueryString[" DemoID"] %>.swf">
+                <PARAM NAME=quality VALUE=high>
+                <PARAM NAME=bgcolor VALUE="#FFFFFF"> <EMBED src="qtdj.swf" quality=high bgcolor="#FFFFFF" WIDTH=1000
+                    HEIGHT=793 TYPE="application/x-shockwave-flash"
+                    PLUGINSPAGE="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></EMBED>
+                </OBJECT> -->
+            <object id="Rene" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+                codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                height="768" width="1000">
+                <PARAM NAME=movie VALUE="{{file}}">
+                <PARAM NAME=quality VALUE=high>
+                <PARAM NAME=bgcolor VALUE="#FFFFFF">
+                <embed src="{{file}}" allowScriptAccess="sameDomain"
+                type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"
+                height="768" width="1000" />
+            </object>
+        </div>
+        <script type="text/javascript">
+            var totalFrames;
             var curFrames;
             var btnName;
             var userChoose;
@@ -37,4 +78,9 @@
                 document.getElementById("curFlash").Rewind();//Rewind()返回第一帧
                 document.getElementById("btnPlay").src = "../../Images/products/play.png";
                 document.getElementById("btnPlay").title = "播放";
-            }</script></form></body></html>
+            }
+        </script>
+    </form>
+</body>
+
+</html>
